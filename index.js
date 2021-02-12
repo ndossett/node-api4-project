@@ -8,8 +8,8 @@ const port = process.env.PORT || 9000;
 app.use(cors());
 app.use(express.json());
 
-app.use("https://api.magicthegathering.io/v1/cards/?colors=blue&cmc=4&pageSize=10 ", (_, res) => {
-    res.json(res.data)
+app.use("/api/*", (_, res) => {
+    res.json({data: "The API Lives!!!"})
 });
 
 app.listen(port, () => {
